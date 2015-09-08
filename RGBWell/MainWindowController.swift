@@ -15,7 +15,20 @@ class MainWindowController: NSWindowController {
     var g: Float = 0.0
     var a: Float = 1.0
     
+    @IBOutlet weak var rSlider: NSSlider!
+    @IBOutlet weak var gSlider: NSSlider!
+    @IBOutlet weak var bSlider: NSSlider!
+    @IBOutlet weak var aSlider: NSSlider!
     @IBOutlet weak var colorWell: NSColorWell!
+    
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        rSlider.floatValue = r
+        gSlider.floatValue = g
+        bSlider.floatValue = b
+        aSlider.floatValue = a
+        updateColor()
+    }
     
     override var windowNibName: String? {
         return "MainWindowController"
